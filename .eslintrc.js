@@ -1,28 +1,42 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
   extends: [
     'plugin:vue/vue3-essential',
-    '@vue/standard'
+    '@vue/standard',
   ],
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   rules: {
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'always-multiline',
+      },
+    ],
+    'eol-last': [
+      'error',
+      'always',
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
   overrides: [
     {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+        '**/tests/unit/**/*.spec.{j,t}s?(x)',
       ],
       env: {
-        jest: true
-      }
-    }
-  ]
+        jest: true,
+      },
+    },
+  ],
 }
