@@ -12,4 +12,10 @@ export const parameters = {
   },
 }
 
+// wrap all stories in `v-app`
+export const decorators = [story => ({
+  components: { story },
+  template: '<v-app><story /></v-app>',
+})]
+
 app.use(vuetify)
