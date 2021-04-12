@@ -42,7 +42,7 @@ const Template = args => ({
   setup: () => ({ args }),
   template: `
     <v-row class="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
-      <v-button v-if="args.icon === false" v-bind="args">Click Me</v-button>
+      <v-button v-if="args.icon === false" v-bind="args">{{ $t('click-me') }}</v-button>
       <v-button v-else v-bind= "args" />
     </v-row>
   `,
